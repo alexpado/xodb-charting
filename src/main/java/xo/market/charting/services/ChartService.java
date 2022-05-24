@@ -3,6 +3,7 @@ package xo.market.charting.services;
 import fr.alexpado.xodb4j.XoDB;
 import fr.alexpado.xodb4j.interfaces.IItem;
 import fr.alexpado.xodb4j.interfaces.IMarket;
+import io.sentry.Sentry;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import xo.market.charting.AppConfig;
@@ -81,6 +82,7 @@ public class ChartService {
             output.close();
             return output.toByteArray();
         } catch (Exception e) {
+            Sentry.captureException(e);
             return this.failed;
         }
     }

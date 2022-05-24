@@ -45,7 +45,7 @@ dependencies {
     implementation group: 'org.json', name: 'json', version: '20220320'
     implementation group: 'fr.alexpado', name: 'xodb4j', version: '1.0.0-rc.2'
 
-    implementation group: 'io.sentry', name: 'sentry-spring-boot-starter', version: '5.7.3'
+    implementation group: 'io.sentry', name: 'sentry-spring-boot-starter', version: '5.7.4'
 }
 
 task copyConfigurationMetadata(type: Copy) {
