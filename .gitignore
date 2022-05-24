@@ -1,0 +1,10 @@
+.gradle
+
+.idea/*
+!.idea/codeStyles
+
+build/
+data/
+
+.env
+cache

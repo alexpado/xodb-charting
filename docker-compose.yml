@@ -1,0 +1,17 @@
+version: '3'
+services:
+  xomarket-charting:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: akionakao/xo-market-charting
+    ports:
+      - '80:${APP_PORT:-8080}'
+    volumes:
+      - 'xomarket-charting:/data/cache'
+
+volumes:
+  xomarket-charting:
+    driver: local
