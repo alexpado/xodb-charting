@@ -23,7 +23,9 @@ public class MainController {
     )
     public byte[] getChart(HttpServletResponse response, @PathVariable int sendTime, @PathVariable int item, @RequestParam(value = "hour", defaultValue = "5") int hour) {
 
-        return this.chart.getChart(response, sendTime, item, hour);
+        // Keep hour between 1 & 24 (inclusive)
+        int realHour = hour < 1 ? 1 : hour > 24 ? 24 : hour;
+        return this.chart.getChart(response, sendTime, item, realHour);
     }
 
 }
